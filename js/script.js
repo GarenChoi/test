@@ -16,36 +16,36 @@ document.querySelector(".menu1 button img").addEventListener("click", () => {
 //banner slide
 function bannerSlide(){
   let slideIndex = 0;
-        setInterval(() => {
-          
-          if (slideIndex == 4) {
-            document.querySelector(".slide_inner").style.transition = "none";
-            slideIndex = 0;
-            document.querySelector(".slide_inner").style.transform = `translate(${
-            -420 * slideIndex
-            }px)`;
-            setTimeout(()=>{
-              document.querySelector(".slide_inner").style.transition = "transform 0.5s";
-              slideIndex++;
-              document.querySelector(".slide_inner").style.transform = `translate(${
-              -420 * slideIndex
-              }px)`;
-              document.querySelector(".slide_index span").innerText = slideIndex+1;
-            })
-            
-          } else {
-            slideIndex++;
-            document.querySelector(".slide_inner").style.transform = `translate(${
-            -420 * slideIndex
-            }px)`;
-          }
-          
-          if(slideIndex==4){
-            document.querySelector(".slide_index span").innerText = 1;
-          } else {
-            document.querySelector(".slide_index span").innerText = slideIndex +1;
-          }
-        }, 3000);
+    setInterval(() => {
+      
+      if (slideIndex == 4) {
+        document.querySelector(".slide_inner").style.transition = "none";
+        slideIndex = 0;
+        document.querySelector(".slide_inner").style.transform = `translate(${
+        -420 * slideIndex
+        }px)`;
+        setTimeout(()=>{
+          document.querySelector(".slide_inner").style.transition = "transform 0.5s";
+          slideIndex++;
+          document.querySelector(".slide_inner").style.transform = `translate(${
+          -420 * slideIndex
+          }px)`;
+          document.querySelector(".slide_index span").innerText = slideIndex+1;
+        })
+        
+      } else {
+        slideIndex++;
+        document.querySelector(".slide_inner").style.transform = `translate(${
+        -420 * slideIndex
+        }px)`;
+      }
+      
+      if(slideIndex==4){
+        document.querySelector(".slide_index span").innerText = 1;
+      } else {
+        document.querySelector(".slide_index span").innerText = slideIndex +1;
+      }
+    }, 3000);
 
 }
 //menu slide
