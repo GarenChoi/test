@@ -1,636 +1,667 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>자격증넷</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <style>
-      #banner {
-        width: 100%;
-        height: 500px;
-        background: linear-gradient(
-          to right,
-          rgba(173, 207, 255, 0.25) 0%,
-          rgba(173, 206, 255, 0.25) 1%,
-          rgba(181, 176, 248, 0.25) 50%,
-          rgba(187, 143, 240, 0.25) 100%
-        );
-        display: flex;
-        align-items: center;
-      }
-      #banner > .container {
-        display: flex;
-        justify-content: space-between;
-      }
-      .banner_slide {
-        width: 420px;
-        height: 370px;
-        overflow: hidden;
-        position: relative;
-      }
-      .slide_index {
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        z-index: 5;
-        color: #fff;
-        font-size: 14px;
-      }
-      .slide_inner {
-        display: flex;
-        transition: transform 0.5s;
-       
-      }
-      .slide_inner img {
 
-        width: 420px;
-        height: 370px;
-      }
-      .banner_menu {
-        width: 550px;
-        height: 370px;
-        padding: 40px 50px 30px;
-        background-color: #fff;
-        position: relative;
-      }
-      .menu_left,
-      .menu_right {
-        width: 22px;
-        height: 22px;
-        position: absolute;
-        top: 40px;
-        border: 1px solid #dfdfdf;
-        background-image: url(https://janet.co.kr/img/common/main/certificate_arrow_off.png);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-color: #fff;
-        cursor: pointer;
-        z-index: 100;
-      }
-      .menu_left {
-        right: 57px;
-        transform: rotateZ(180deg);
-        background-position: center 2.5px;
-      }
-      .menu_right {
-        right: 35px;
-      }
-      .menu_slide {
-        width: 450px;
-        height: 240px;
-        overflow: hidden;
-      }
-      .menu_slide_inner {
-        width: 3600px;
-        display: flex;
-        transform: translateX(-450px);
-        transition: transform 0.5s;
-      }
-      .menu_slide_cont {
-        width: 450px;
-        height: 240px;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자격증넷</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-      }
-      
-      .menu_slide_cont h3 {
-        font-size: 18px;
-      }
-      .menu_slide_info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      .menu_slide_info a {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-around;
-        width: 50%;
-      }
-      .menu_slide_info a img {
-        width: 72px;
-        height: 58px;
-      }
-
-      .menu_slide_desc h4 {
-        width: 100px;
-        word-break: keep-all;
-        font-size: 14px;
-        margin-bottom: 8px;
-      }
-      .menu_slide_desc p {
-        width: 100px;
-        word-break: keep-all;
-        font-size: 12px;
-      }
-      .menu_slide_cont5 .menu_slide_info a {
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        text-align: center;
-        width: 33%;
-      }
-      .menu_slide_cont5 .menu_slide_desc h4 {
-        margin-top: 20px;
-        width: 130px;
-      }
-      .menu_slide_cont5 .menu_slide_desc p {
-        width: 130px;
-      }
-      .banner_menu > a > img {
-
-        width: 430px;
-        height: 60px;
-        margin-left: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="wrap">
-      <!-- header -->
-      <header id="header">
-        <div class="container">
-          <div class="header_cont">
-            <div class="header_search">
-              <a href="#">
-                <img
-                  src="https://janet.co.kr/html_demo/img/common/ft_logo.png"
-                  alt="로고이미지"
-                />
-              </a>
-              <form action="#">
-                <fieldset>
-                  <legend>검색</legend>
-                  <div class="search_box">
-                    <div>통합검색</div>
-                    <input
-                      type="text"
-                      placeholder="자격증 꿀팁 보러가기 #취준 #취뽀"
-                    />
-                  </div>
-                  <button type="submit">
-                    <img
-                      src="https://janet.co.kr/html_demo/img/common/mainSrchBtn.png"
-                      alt="검색"
-                    />
-                  </button>
-                </fieldset>
-              </form>
-            </div>
-            <div class="header_member">
-              <a href="#" class="join">
-                <div class="img"></div>
-                회원가입
-              </a>
-              <a href="#" class="login">
-                <div class="img"></div>
-                로그인
-              </a>
-              <a href="#" class="service">
-                <div class="img"></div>
-                기업서비스
-              </a>
-            </div>
+<body>
+  <div id="wrap">
+    <!-- header -->
+    <header id="header">
+      <div class="container">
+        <div class="header_cont">
+          <div class="header_search">
+            <a href="#">
+              <img src="https://janet.co.kr/html_demo/img/common/ft_logo.png" alt="로고이미지" />
+            </a>
+            <form action="#">
+              <fieldset>
+                <legend>검색</legend>
+                <div class="search_box">
+                  <div>통합검색</div>
+                  <input type="text" placeholder="자격증 꿀팁 보러가기 #취준 #취뽀" />
+                </div>
+                <button type="submit">
+                  <img src="https://janet.co.kr/html_demo/img/common/mainSrchBtn.png" alt="검색" />
+                </button>
+              </fieldset>
+            </form>
           </div>
-
-          <div class="header_info">
-            <div class="menu1">
-              <button>
-                <img
-                  src="https://janet.co.kr/img/common/header/gnb.png"
-                  alt="메뉴"
-                />
-              </button>
-              <a href="#">Top100</a>
-              <a href="#">자격증정보</a>
-              <a href="#">어학/공무원</a>
-              <a href="#">자넷info</a>
-              <a href="#">자넷톡</a>
-            </div>
-            <div class="menu2">
-              <a href="#"></a>
-              <a href="#"></a>
-              <a href="#" class="ai"></a>
-            </div>
+          <div class="header_member">
+            <a href="#" class="join">
+              <div class="img"></div>
+              회원가입
+            </a>
+            <a href="#" class="login">
+              <div class="img"></div>
+              로그인
+            </a>
+            <a href="#" class="service">
+              <div class="img"></div>
+              기업서비스
+            </a>
           </div>
         </div>
-        <div class="list">
-          <div class="sub_menu">
-            <ul>
-              <li class="bold"><a href="#">자격증정보</a></li>
-              <li><a href="#">직무별 자격증</a></li>
-              <li><a href="#">계열별정보</a></li>
-              <li><a href="#">국제자격증</a></li>
-              <li><a href="#">자격증일정</a></li>
-              <li><a href="#">시험접수안내</a></li>
-              <li><a href="#">학점은행제</a></li>
-              <li><a href="#">과정평가형 자격</a></li>
-              <li><a href="#">직업정보검색</a></li>
-              <li><a href="#">직업사전</a></li>
-              <li><a href="#">국가자격대여 근절캠패인</a></li>
-            </ul>
-            <ul>
-              <li class="bold"><a href="#">어학/공무원</a></li>
-              <li><a href="#">어학</a></li>
-              <li><a href="#">어학 원서접수 안내</a></li>
-              <li><a href="#">공무원</a></li>
-              <li><a href="#">공무원 원서접수 안내</a></li>
-            </ul>
-            <ul>
-              <li class="bold"><a href="#">자넷info</a></li>
-              <li><a href="#">자넷뉴스</a></li>
-              <li><a href="#">자넷매거진</a></li>
-              <li><a href="#">큐넷 이용안내</a></li>
-              <li><a href="#">청년지원정책</a></li>
-              <li><a href="#">자격증 공모전</a></li>
-              <li><a href="#">국가혜택정보</a></li>
-              <li><a href="#">대학별 자격특전</a></li>
-            </ul>
-            <ul>
-              <li class="bold"><a href="#">자넷톡</a></li>
-              <li><a href="#">자격증 토론방</a></li>
-              <li><a href="#">일반 토론방</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">자넷TV</a></li>
-              <li class="bold"><a href="#">우리동네학원</a></li>
-              <li><a href="#">맞춤학원검색</a></li>
-              <li><a href="#">학원 찾아드림</a></li>
-              <li><a href="#">우리동네학원 info</a></li>
-            </ul>
-            <ul>
-              <li class="bold"><a href="#">자넷추천</a></li>
-              <li><a href="#">추천테스트</a></li>
-              <li><a href="#">추천Ai</a></li>
-              <li><a href="#">커뮤니티</a></li>
-            </ul>
-            <ul>
-              <li class="bold"><a href="#">MY PAGE</a></li>
-              <li><a href="#">나의 자격증</a></li>
-              <li><a href="#">자넷톡</a></li>
-              <li><a href="#">즐겨찾기</a></li>
-              <li><a href="#">나의정보수정</a></li>
-              <li><a href="#">자격증정보수정</a></li>
-            </ul>
+
+        <div class="header_info">
+          <div class="menu1">
+            <button>
+              <img src="https://janet.co.kr/img/common/header/gnb.png" alt="메뉴" />
+            </button>
+            <a href="#">Top100</a>
+            <a href="#">자격증정보</a>
+            <a href="#">어학/공무원</a>
+            <a href="#">자넷info</a>
+            <a href="#">자넷톡</a>
+          </div>
+          <div class="menu2">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#" class="ai"></a>
           </div>
         </div>
-      </header>
+      </div>
+      <div class="list">
+        <div class="sub_menu">
+          <ul>
+            <li class="bold"><a href="#">자격증정보</a></li>
+            <li><a href="#">직무별 자격증</a></li>
+            <li><a href="#">계열별정보</a></li>
+            <li><a href="#">국제자격증</a></li>
+            <li><a href="#">자격증일정</a></li>
+            <li><a href="#">시험접수안내</a></li>
+            <li><a href="#">학점은행제</a></li>
+            <li><a href="#">과정평가형 자격</a></li>
+            <li><a href="#">직업정보검색</a></li>
+            <li><a href="#">직업사전</a></li>
+            <li><a href="#">국가자격대여 근절캠패인</a></li>
+          </ul>
+          <ul>
+            <li class="bold"><a href="#">어학/공무원</a></li>
+            <li><a href="#">어학</a></li>
+            <li><a href="#">어학 원서접수 안내</a></li>
+            <li><a href="#">공무원</a></li>
+            <li><a href="#">공무원 원서접수 안내</a></li>
+          </ul>
+          <ul>
+            <li class="bold"><a href="#">자넷info</a></li>
+            <li><a href="#">자넷뉴스</a></li>
+            <li><a href="#">자넷매거진</a></li>
+            <li><a href="#">큐넷 이용안내</a></li>
+            <li><a href="#">청년지원정책</a></li>
+            <li><a href="#">자격증 공모전</a></li>
+            <li><a href="#">국가혜택정보</a></li>
+            <li><a href="#">대학별 자격특전</a></li>
+          </ul>
+          <ul>
+            <li class="bold"><a href="#">자넷톡</a></li>
+            <li><a href="#">자격증 토론방</a></li>
+            <li><a href="#">일반 토론방</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">자넷TV</a></li>
+            <li class="bold"><a href="#">우리동네학원</a></li>
+            <li><a href="#">맞춤학원검색</a></li>
+            <li><a href="#">학원 찾아드림</a></li>
+            <li><a href="#">우리동네학원 info</a></li>
+          </ul>
+          <ul>
+            <li class="bold"><a href="#">자넷추천</a></li>
+            <li><a href="#">추천테스트</a></li>
+            <li><a href="#">추천Ai</a></li>
+            <li><a href="#">커뮤니티</a></li>
+          </ul>
+          <ul>
+            <li class="bold"><a href="#">MY PAGE</a></li>
+            <li><a href="#">나의 자격증</a></li>
+            <li><a href="#">자넷톡</a></li>
+            <li><a href="#">즐겨찾기</a></li>
+            <li><a href="#">나의정보수정</a></li>
+            <li><a href="#">자격증정보수정</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
 
-      <!-- banner -->
-      <section id="banner">
-        <div class="container">
-          <div class="banner_slide">
-            <div class="slide_index">
-              <span>1</span> / 4
-            </div>
-            <div class="slide_inner">
-              <a href="#"
-                ><img
-                  src="https://janet.co.kr/img/common/main/banner/mainBn_top_01.png"
-                  alt="슬라이드이미지1"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://janet.co.kr/img/common/main/banner/mainBn_top_02.png"
-                  alt="슬라이드이미지2"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://janet.co.kr/img/common/main/banner/mainBn_top_03.png"
-                  alt="슬라이드이미지3"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://janet.co.kr/img/common/main/banner/mainBn_top_04.png"
-                  alt="슬라이드이미지4"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://janet.co.kr/img/common/main/banner/mainBn_top_01.png"
-                  alt="슬라이드이미지1"
-              /></a>
-            </div>
+    <!-- banner -->
+    <section id="banner">
+      <div class="container">
+        <div class="banner_slide">
+          <div class="slide_index">
+            <span>1</span> / 4
           </div>
+          <div class="slide_inner">
+            <a href="#"><img src="https://janet.co.kr/img/common/main/banner/mainBn_top_01.png" alt="슬라이드이미지1" /></a>
+            <a href="#"><img src="https://janet.co.kr/img/common/main/banner/mainBn_top_02.png" alt="슬라이드이미지2" /></a>
+            <a href="#"><img src="https://janet.co.kr/img/common/main/banner/mainBn_top_03.png" alt="슬라이드이미지3" /></a>
+            <a href="#"><img src="https://janet.co.kr/img/common/main/banner/mainBn_top_04.png" alt="슬라이드이미지4" /></a>
+            <a href="#"><img src="https://janet.co.kr/img/common/main/banner/mainBn_top_01.png" alt="슬라이드이미지1" /></a>
+          </div>
+        </div>
 
-          <div class="banner_menu">
-            <div class="menu_left"></div>
-            <div class="menu_right"></div>
-            <div class="menu_slide">
-              <div class="menu_slide_inner">
-                <div class="menu_slide_cont menu_slide_cont6">
-                  <h3>우리동네 학원은?</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown1.png" alt="맞춤학원검색">
-                      <div class="menu_slide_desc">
-                        <h4>맞춤학원검색</h4>
-                        <p>나에게 맞는 맞춤 학원은?</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown2.png" alt="우리동네학원 info">
-                      <div class="menu_slide_desc">
-                        <h4>우리동네학원 info</h4>
-                        <p>우리동네 학원 소식 살펴보기!</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown3.png" alt="학원찾아드림">
-                      <div class="menu_slide_desc">
-                        <h4>학원찾아드림</h4>
-                        <p>학원을 비교해서 선택해보세요!</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown4.png" alt="지도보기">
-                      <div class="menu_slide_desc">
-                        <h4>지도보기</h4>
-                        <p>내주변 자격증 학원 찾아보기</p>
-                      </div>
-                    </a>
-                  </div>
+        <div class="banner_menu">
+          <div class="menu_left"></div>
+          <div class="menu_right"></div>
+          <div class="menu_slide">
+            <div class="menu_slide_inner">
+              <div class="menu_slide_cont menu_slide_cont6">
+                <h3>우리동네 학원은?</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown1.png" alt="맞춤학원검색">
+                    <div class="menu_slide_desc">
+                      <h4>맞춤학원검색</h4>
+                      <p>나에게 맞는 맞춤 학원은?</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown2.png" alt="우리동네학원 info">
+                    <div class="menu_slide_desc">
+                      <h4>우리동네학원 info</h4>
+                      <p>우리동네 학원 소식 살펴보기!</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown3.png" alt="학원찾아드림">
+                    <div class="menu_slide_desc">
+                      <h4>학원찾아드림</h4>
+                      <p>학원을 비교해서 선택해보세요!</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown4.png" alt="지도보기">
+                    <div class="menu_slide_desc">
+                      <h4>지도보기</h4>
+                      <p>내주변 자격증 학원 찾아보기</p>
+                    </div>
+                  </a>
                 </div>
-                <div class="menu_slide_cont menu_slide_cont1">
-                  <h3>자격증정보</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/inCrfc.png" alt="자격증정보">
-                      <div class="menu_slide_desc">
-                        <h4>자격증정보</h4>
-                        <p>자격증정보의 모든 것</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/iCrtfc.png" alt="계열별정보">
-                      <div class="menu_slide_desc">
-                        <h4>계열별정보</h4>
-                        <p>자격증에 대하여 알려드립니다.</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/sCrtfc.png" alt="자격증 공모전">
-                      <div class="menu_slide_desc">
-                        <h4>자격증 공모전</h4>
-                        <p>자격증 관련</p>
-                        <p>공모전 정보</p>
-                        <p>확인하기</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/rCrtfc.png" alt="시험접수안내">
-                      <div class="menu_slide_desc">
-                        <h4>시험접수안내</h4>
-                        <p>필기/실기</p>
-                        <p>기본접수안내</p>
-                      </div>
-                    </a>
-                  </div>
+              </div>
+              <div class="menu_slide_cont menu_slide_cont1">
+                <h3>자격증정보</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/inCrfc.png" alt="자격증정보">
+                    <div class="menu_slide_desc">
+                      <h4>자격증정보</h4>
+                      <p>자격증정보의 모든 것</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/iCrtfc.png" alt="계열별정보">
+                    <div class="menu_slide_desc">
+                      <h4>계열별정보</h4>
+                      <p>자격증에 대하여 알려드립니다.</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/sCrtfc.png" alt="자격증 공모전">
+                    <div class="menu_slide_desc">
+                      <h4>자격증 공모전</h4>
+                      <p>자격증 관련</p>
+                      <p>공모전 정보</p>
+                      <p>확인하기</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/rCrtfc.png" alt="시험접수안내">
+                    <div class="menu_slide_desc">
+                      <h4>시험접수안내</h4>
+                      <p>필기/실기</p>
+                      <p>기본접수안내</p>
+                    </div>
+                  </a>
                 </div>
-                <div class="menu_slide_cont menu_slide_cont2">
-                  <h3>자넷Info</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/bMagazine.png" alt="자넷매거진">
-                      <div class="menu_slide_desc">
-                        <h4>자넷매거진</h4>
-                        <p>다양한 자격증 매거진</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/bNews.png" alt="뉴스">
-                      <div class="menu_slide_desc">
-                        <h4>뉴스</h4>
-                        <p>오늘의 최신뉴스는?</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/event.png" alt="청년지원정책">
-                      <div class="menu_slide_desc">
-                        <h4>청년지원정책</h4>
-                        <p>다양한 지원정책을 한눈에!</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/ad_info.png" alt="공인중개사 원서접수">
-                      <div class="menu_slide_desc">
-                        <h4>공인중개사 원서접수</h4>
-                        <p>가장빠른 원서 접수 꿀팁</p>
-                      </div>
-                    </a>
-                  </div>
+              </div>
+              <div class="menu_slide_cont menu_slide_cont2">
+                <h3>자넷Info</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/bMagazine.png" alt="자넷매거진">
+                    <div class="menu_slide_desc">
+                      <h4>자넷매거진</h4>
+                      <p>다양한 자격증 매거진</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/bNews.png" alt="뉴스">
+                    <div class="menu_slide_desc">
+                      <h4>뉴스</h4>
+                      <p>오늘의 최신뉴스는?</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/event.png" alt="청년지원정책">
+                    <div class="menu_slide_desc">
+                      <h4>청년지원정책</h4>
+                      <p>다양한 지원정책을 한눈에!</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/ad_info.png" alt="공인중개사 원서접수">
+                    <div class="menu_slide_desc">
+                      <h4>공인중개사 원서접수</h4>
+                      <p>가장빠른 원서 접수 꿀팁</p>
+                    </div>
+                  </a>
                 </div>
-                <div class="menu_slide_cont menu_slide_cont3">
-                  <h3>커뮤니티</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/bBest.png" alt="베스트글">
-                      <div class="menu_slide_desc">
-                        <h4>베스트글</h4>
-                        <p>자넷의 인기 베스트글 모음</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/hot_issue.png" alt="오늘의 핫이슈">
-                      <div class="menu_slide_desc">
-                        <h4>오늘의 핫이슈</h4>
-                        <p>핫이슈 키워드가 궁금하다면?</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/bFree.png" alt="자유게시판">
-                      <div class="menu_slide_desc">
-                        <h4>자유게시판</h4>
-                        <p>자유로운 주제를 나누는 공간</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/bHumor.png" alt="유머게시판">
-                      <div class="menu_slide_desc">
-                        <h4>유머게시판</h4>
-                        <p>나만의 유머를 소통해보세요</p>
-                      </div>
-                    </a>
-                  </div>
+              </div>
+              <div class="menu_slide_cont menu_slide_cont3">
+                <h3>커뮤니티</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/bBest.png" alt="베스트글">
+                    <div class="menu_slide_desc">
+                      <h4>베스트글</h4>
+                      <p>자넷의 인기 베스트글 모음</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/hot_issue.png" alt="오늘의 핫이슈">
+                    <div class="menu_slide_desc">
+                      <h4>오늘의 핫이슈</h4>
+                      <p>핫이슈 키워드가 궁금하다면?</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/bFree.png" alt="자유게시판">
+                    <div class="menu_slide_desc">
+                      <h4>자유게시판</h4>
+                      <p>자유로운 주제를 나누는 공간</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/bHumor.png" alt="유머게시판">
+                    <div class="menu_slide_desc">
+                      <h4>유머게시판</h4>
+                      <p>나만의 유머를 소통해보세요</p>
+                    </div>
+                  </a>
                 </div>
-                <div class="menu_slide_cont menu_slide_cont4">
-                  <h3>추천</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/ai_rcmd.png" alt="자넷 AI 추천">
-                      <div class="menu_slide_desc">
-                        <h4>자넷 AI 추천</h4>
-                        <p>AI 분석을 통한 자격증 추천</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jprs_test.png" alt="JPRS추천 테스트">
-                      <div class="menu_slide_desc">
-                        <h4>JPRS추천 테스트</h4>
-                        <p>내성향에 맞는 자격증은?</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/job_test.png" alt="직업성향 테스트">
-                      <div class="menu_slide_desc">
-                        <h4>직업성향 테스트</h4>
-                        <p>내게 맞는 직업은?</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/big5_test.png" alt="Oxford BIG5 테스트">
-                      <div class="menu_slide_desc">
-                        <h4>Oxford BIG5 테스트</h4>
-                        <p>자세한 직업분석이 필요하다면?</p>
-                      </div>
-                    </a>
-                  </div>
+              </div>
+              <div class="menu_slide_cont menu_slide_cont4">
+                <h3>추천</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/ai_rcmd.png" alt="자넷 AI 추천">
+                    <div class="menu_slide_desc">
+                      <h4>자넷 AI 추천</h4>
+                      <p>AI 분석을 통한 자격증 추천</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jprs_test.png" alt="JPRS추천 테스트">
+                    <div class="menu_slide_desc">
+                      <h4>JPRS추천 테스트</h4>
+                      <p>내성향에 맞는 자격증은?</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/job_test.png" alt="직업성향 테스트">
+                    <div class="menu_slide_desc">
+                      <h4>직업성향 테스트</h4>
+                      <p>내게 맞는 직업은?</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/big5_test.png" alt="Oxford BIG5 테스트">
+                    <div class="menu_slide_desc">
+                      <h4>Oxford BIG5 테스트</h4>
+                      <p>자세한 직업분석이 필요하다면?</p>
+                    </div>
+                  </a>
                 </div>
-                <div class="menu_slide_cont menu_slide_cont5">
-                  <h3>자넷톡</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/bQna.png" alt="자넷 질문톡">
-                      <div class="menu_slide_desc">
-                        <h4>자넷 질문톡</h4>
-                        <p>궁금증을 풀어드려요!</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/janettv.png" alt="자넷 TV">
-                      <div class="menu_slide_desc">
-                        <h4>자넷 TV</h4>
-                        <p>자넷의 영상컨텐츠 살펴보기</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/faq.png" alt="FAQ">
-                      <div class="menu_slide_desc">
-                        <h4>FAQ</h4>
-                        <p>자넷에 대해 궁금할땐?</p>
-                      </div>
-                    </a>
-                  </div>
+              </div>
+              <div class="menu_slide_cont menu_slide_cont5">
+                <h3>자넷톡</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/bQna.png" alt="자넷 질문톡">
+                    <div class="menu_slide_desc">
+                      <h4>자넷 질문톡</h4>
+                      <p>궁금증을 풀어드려요!</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/janettv.png" alt="자넷 TV">
+                    <div class="menu_slide_desc">
+                      <h4>자넷 TV</h4>
+                      <p>자넷의 영상컨텐츠 살펴보기</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/faq.png" alt="FAQ">
+                    <div class="menu_slide_desc">
+                      <h4>FAQ</h4>
+                      <p>자넷에 대해 궁금할땐?</p>
+                    </div>
+                  </a>
                 </div>
-                <div class="menu_slide_cont menu_slide_cont6">
-                  <h3>우리동네 학원은?</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown1.png" alt="맞춤학원검색">
-                      <div class="menu_slide_desc">
-                        <h4>맞춤학원검색</h4>
-                        <p>나에게 맞는 맞춤 학원은?</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown2.png" alt="우리동네학원 info">
-                      <div class="menu_slide_desc">
-                        <h4>우리동네학원 info</h4>
-                        <p>우리동네 학원 소식 살펴보기!</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown3.png" alt="학원찾아드림">
-                      <div class="menu_slide_desc">
-                        <h4>학원찾아드림</h4>
-                        <p>학원을 비교해서 선택해보세요!</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/jnTown4.png" alt="지도보기">
-                      <div class="menu_slide_desc">
-                        <h4>지도보기</h4>
-                        <p>내주변 자격증 학원 찾아보기</p>
-                      </div>
-                    </a>
-                  </div>
+              </div>
+              <div class="menu_slide_cont menu_slide_cont6">
+                <h3>우리동네 학원은?</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown1.png" alt="맞춤학원검색">
+                    <div class="menu_slide_desc">
+                      <h4>맞춤학원검색</h4>
+                      <p>나에게 맞는 맞춤 학원은?</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown2.png" alt="우리동네학원 info">
+                    <div class="menu_slide_desc">
+                      <h4>우리동네학원 info</h4>
+                      <p>우리동네 학원 소식 살펴보기!</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown3.png" alt="학원찾아드림">
+                    <div class="menu_slide_desc">
+                      <h4>학원찾아드림</h4>
+                      <p>학원을 비교해서 선택해보세요!</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/jnTown4.png" alt="지도보기">
+                    <div class="menu_slide_desc">
+                      <h4>지도보기</h4>
+                      <p>내주변 자격증 학원 찾아보기</p>
+                    </div>
+                  </a>
                 </div>
-                <div class="menu_slide_cont menu_slide_cont1">
-                  <h3>자격증정보</h3>
-                  <div class="menu_slide_info">
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/inCrfc.png" alt="자격증정보">
-                      <div class="menu_slide_desc">
-                        <h4>자격증정보</h4>
-                        <p>자격증정보의 모든 것</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/iCrtfc.png" alt="계열별정보">
-                      <div class="menu_slide_desc">
-                        <h4>계열별정보</h4>
-                        <p>자격증에 대하여 알려드립니다.</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/sCrtfc.png" alt="자격증 공모전">
-                      <div class="menu_slide_desc">
-                        <h4>자격증 공모전</h4>
-                        <p>자격증 관련</p>
-                        <p>공모전 정보</p>
-                        <p>확인하기</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <img src="https://janet.co.kr/html_demo/img/main/rCrtfc.png" alt="시험접수안내">
-                      <div class="menu_slide_desc">
-                        <h4>시험접수안내</h4>
-                        <p>필기/실기</p>
-                        <p>기본접수안내</p>
-                      </div>
-                    </a>
-                  </div>
+              </div>
+              <div class="menu_slide_cont menu_slide_cont1">
+                <h3>자격증정보</h3>
+                <div class="menu_slide_info">
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/inCrfc.png" alt="자격증정보">
+                    <div class="menu_slide_desc">
+                      <h4>자격증정보</h4>
+                      <p>자격증정보의 모든 것</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/iCrtfc.png" alt="계열별정보">
+                    <div class="menu_slide_desc">
+                      <h4>계열별정보</h4>
+                      <p>자격증에 대하여 알려드립니다.</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/sCrtfc.png" alt="자격증 공모전">
+                    <div class="menu_slide_desc">
+                      <h4>자격증 공모전</h4>
+                      <p>자격증 관련</p>
+                      <p>공모전 정보</p>
+                      <p>확인하기</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <img src="https://janet.co.kr/html_demo/img/main/rCrtfc.png" alt="시험접수안내">
+                    <div class="menu_slide_desc">
+                      <h4>시험접수안내</h4>
+                      <p>필기/실기</p>
+                      <p>기본접수안내</p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
-            <a href="#"><img src="https://janet.co.kr/data/ebslider/eb4_basic/img/d0942d969f0a37cb73a46db345ea874b.png" alt="배너 광고"></a>
+          </div>
+          <a href="#"><img src="https://janet.co.kr/data/ebslider/eb4_basic/img/d0942d969f0a37cb73a46db345ea874b.png"
+              alt="배너 광고"></a>
+        </div>
+
+        <div class="banner_list">
+          <div class="list_left"></div>
+          <div class="list_right"></div>
+          <div class="list_slide">
+            <div class="list_slide_inner">
+              <div class="list_slide_cont list_slide_cont6">
+                <h3>산업기사 인기순위</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>위험물산업기사</a></li>
+                  <li><a href="#"><span>2</span>전기산업기사</a></li>
+                  <li><a href="#"><span>3</span>제품디자인산업기사</a></li>
+                  <li><a href="#"><span>4</span>건설기계정비산업기사</a></li>
+                  <li><a href="#"><span>5</span>사출금형산업기사</a></li>
+                  <li><a href="#"><span>6</span>영사산업기사</a></li>
+                  <li><a href="#"><span>7</span>철도신호산업기사</a></li>
+                  <li><a href="#"><span>8</span>시각디자인산업기사</a></li>
+                  <li><a href="#"><span>9</span>소방설비산업기사(기계분야)</a></li>
+                  <li><a href="#"><span>10</span>생산자동회산업기사</a></li>
+                </ul>
+              </div>
+              <div class="list_slide_cont list_slide_cont1">
+                <h3>기사 인기순위</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>전기기사</a></li>
+                  <li><a href="#"><span>2</span>산업안전기사</a></li>
+                  <li><a href="#"><span>3</span>위험물산업기사</a></li>
+                  <li><a href="#"><span>4</span>전기산업기사</a></li>
+                  <li><a href="#"><span>5</span>건축기사</a></li>
+                  <li><a href="#"><span>6</span>건설안전기사</a></li>
+                  <li><a href="#"><span>7</span>소방설비기사(전기분야)</a></li>
+                  <li><a href="#"><span>8</span>제품디자인산업기사</a></li>
+                  <li><a href="#"><span>9</span>건설기계정비산업기사</a></li>
+                  <li><a href="#"><span>10</span>사출금형산업기사</a></li>
+                </ul>
+              </div>
+              <div class="list_slide_cont list_slide_cont2">
+                <h3>기능장 인기순위</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>위험물기능장</a></li>
+                  <li><a href="#"><span>2</span>전기기능장</a></li>
+                  <li><a href="#"><span>3</span>가스기능장</a></li>
+                  <li><a href="#"><span>4</span>용접기능장</a></li>
+                  <li><a href="#"><span>5</span>기계가공기능장</a></li>
+                  <li><a href="#"><span>6</span>건설기계기능장</a></li>
+                  <li><a href="#"><span>7</span>건축일반시공기능장</a></li>
+                  <li><a href="#"><span>8</span>귀금속가공기능장</a></li>
+                  <li><a href="#"><span>9</span>금형제작기능장</a></li>
+                  <li><a href="#"><span>10</span>판금제관기능장</a></li>
+                </ul>
+              </div>
+              <div class="list_slide_cont list_slide_cont3">
+                <h3>베스트 글 Top10</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>직업 적성 결과</a></li>
+                  <li><a href="#"><span>2</span>2급 생활스포츠 지도사...</a></li>
+                  <li><a href="#"><span>3</span>ai 테스트 후기입니다...</a></li>
+                  <li><a href="#"><span>4</span>얼마전에 장르만 로맨스...</a></li>
+                  <li><a href="#"><span>5</span>20대 카톡방에 숨은...</a></li>
+                  <li><a href="#"><span>6</span>유튜브에서 K-POP...</a></li>
+                  <li><a href="#"><span>7</span>강남역 근처 미용학원...</a></li>
+                  <li><a href="#"><span>8</span>우리강디좀 봐주세요~</a></li>
+                  <li><a href="#"><span>9</span>동물들은 죽음의 공포를...</a></li>
+                  <li><a href="#"><span>10</span>종목별 특징이 보이는...</a></li>
+                </ul>
+              </div>
+              <div class="list_slide_cont list_slide_cont4">
+                <h3>핫클릭Top10</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>자넷 커뮤니티 사용자...</a></li>
+                  <li><a href="#"><span>2</span>ai 테스트 후기입니다...</a></li>
+                  <li><a href="#"><span>3</span>아몬드 브리즈 아시나요...</a></li>
+                  <li><a href="#"><span>4</span>다들 오늘 집가시자마자...</a></li>
+                  <li><a href="#"><span>5</span>왜 여기에는 최신글보기...</a></li>
+                  <li><a href="#"><span>6</span>이제 슬슬 가을이 오나...</a></li>
+                  <li><a href="#"><span>7</span>점심 메뉴 머가 좋을까...</a></li>
+                  <li><a href="#"><span>8</span>20대 카톡방에 숨은...</a></li>
+                  <li><a href="#"><span>9</span>다들 반려동물 키우니?...</a></li>
+                  <li><a href="#"><span>10</span>있잖아.........</a></li>
+                </ul>
+              </div>
+              <div class="list_slide_cont list_slide_cont5">
+                <h3>기능사 인기순위</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>한식조리기능사</a></li>
+                  <li><a href="#"><span>2</span>지게차운전기능사</a></li>
+                  <li><a href="#"><span>3</span>전기기능사</a></li>
+                  <li><a href="#"><span>4</span>위험물기능사</a></li>
+                  <li><a href="#"><span>5</span>지적기능사</a></li>
+                  <li><a href="#"><span>6</span>광산보안기능사</a></li>
+                  <li><a href="#"><span>7</span>방사선비파괴검사기능사</a></li>
+                  <li><a href="#"><span>8</span>수산양식기능사</a></li>
+                  <li><a href="#"><span>9</span>반도체장비유지보수기능사</a></li>
+                  <li><a href="#"><span>10</span>영사기능사</a></li>
+                </ul>
+              </div>
+              <div class="list_slide_cont list_slide_cont6">
+                <h3>산업기사 인기순위</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>위험물산업기사</a></li>
+                  <li><a href="#"><span>2</span>전기산업기사</a></li>
+                  <li><a href="#"><span>3</span>제품디자인산업기사</a></li>
+                  <li><a href="#"><span>4</span>건설기계정비산업기사</a></li>
+                  <li><a href="#"><span>5</span>사출금형산업기사</a></li>
+                  <li><a href="#"><span>6</span>영사산업기사</a></li>
+                  <li><a href="#"><span>7</span>철도신호산업기사</a></li>
+                  <li><a href="#"><span>8</span>시각디자인산업기사</a></li>
+                  <li><a href="#"><span>9</span>소방설비산업기사(기계분야)</a></li>
+                  <li><a href="#"><span>10</span>생산자동회산업기사</a></li>
+                </ul>
+              </div>
+              <div class="list_slide_cont list_slide_cont1">
+                <h3>기사 인기순위</h3>
+                <ul>
+                  <li><a href="#"><span>1</span>전기기사</a></li>
+                  <li><a href="#"><span>2</span>산업안전기사</a></li>
+                  <li><a href="#"><span>3</span>위험물산업기사</a></li>
+                  <li><a href="#"><span>4</span>전기산업기사</a></li>
+                  <li><a href="#"><span>5</span>건축기사</a></li>
+                  <li><a href="#"><span>6</span>건설안전기사</a></li>
+                  <li><a href="#"><span>7</span>소방설비기사(전기분야)</a></li>
+                  <li><a href="#"><span>8</span>제품디자인산업기사</a></li>
+                  <li><a href="#"><span>9</span>건설기계정비산업기사</a></li>
+                  <li><a href="#"><span>10</span>사출금형산업기사</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- main -->
+    <main id="main">
+      <div class="container">
+        <div class="main_slide">
+          <div class="main_slide_left"></div>
+          <div class="main_slide_right"></div>
+          <div class="main_slide_box">
+            <div class="main_slide_inner">
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_05.png" alt="메인슬라이드이미지5"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_06.png" alt="메인슬라이드이미지6"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_01.png" alt="메인슬라이드이미지1"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_02.png" alt="메인슬라이드이미지2"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_03.png" alt="메인슬라이드이미지3"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_04.png" alt="메인슬라이드이미지4"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_05.png" alt="메인슬라이드이미지5"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_06.png" alt="메인슬라이드이미지6"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_01.png" alt="메인슬라이드이미지1"></a>
+              <a href="#"><img src="https://janet.co.kr/html_demo/img/main/MainBn_scroll_02.png" alt="메인슬라이드이미지2"></a>
+            </div>
           </div>
         </div>
-      </section>
-    </div>
 
-    <script src="js/script.js"></script>
-    <script>
-      let menuIndex = 1;
-      let clickBtn = true;
-      document.querySelector(".menu_left").addEventListener("click",()=>{
-        if(clickBtn){
-          clickBtn = false;
-          menuIndex--;
-          document.querySelector(".menu_slide_inner").style.transform = `translateX(${-450*menuIndex}px)`;
-          setTimeout(()=>{
-            if(menuIndex == 0){
-              document.querySelector(".menu_slide_inner").style.transition = "none";
-              menuIndex =6;
-              document.querySelector(".menu_slide_inner").style.transform = `translateX(${-450*menuIndex}px)`;
-              
-            }
-          },500)
-          setTimeout(()=>{
-            document.querySelector(".menu_slide_inner").style.transition = "transform 0.5s";
-            clickBtn=true;
-          },600)
-        }
-      })
-      document.querySelector(".menu_right").addEventListener("click",()=>{
-        if(clickBtn){
-          clickBtn = false;
-          menuIndex++;
-          document.querySelector(".menu_slide_inner").style.transform = `translateX(${-450*menuIndex}px)`;
-          setTimeout(()=>{
-            if(menuIndex == 7){
-              document.querySelector(".menu_slide_inner").style.transition = "none";
-              menuIndex =1;
-              document.querySelector(".menu_slide_inner").style.transform = `translateX(${-450*menuIndex}px)`;
-              
-            }
-          },500)
-          setTimeout(()=>{
-            document.querySelector(".menu_slide_inner").style.transition = "transform 0.5s";
-            clickBtn=true;
-          },600)
-        }
-      })
-    </script>
-  </body>
+        <div class="contents">
+          <h3><img src="https://janet.co.kr/img/common/main/m_main/hot_keyword.png" alt="키워드이미지"><span class="purple">HOT</span>키워드<span class="lighter">TOP20</span></h3>
+          <div class="contents_cont">
+            <div class="cont_box cont_box1">
+              <div class="cont_box_img cont_box_img1">
+                <img src="https://janet.co.kr/data/licenseitem/155/hotKeyword_02.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+            <div class="cont_box cont_box2">
+              <div class="cont_box_img cont_box_img2">
+                <img src="https://janet.co.kr/data/licenseitem/144/hotKeyword_03.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+            <div class="cont_box cont_box3">
+              <div class="cont_box_img cont_box_img3">
+                <img src="https://janet.co.kr/data/licenseitem/91/hotKeyword_11.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+            <div class="cont_box cont_box4">
+              <div class="cont_box_img cont_box_img4">
+                <img src="https://janet.co.kr/data/licenseitem/331/hotKeyword_05.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+            <div class="cont_box cont_box5">
+              <div class="cont_box_img cont_box_img5">
+                <img src="https://janet.co.kr/data/licenseitem/96/hotKeyword_13.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+            <div class="cont_box cont_box6">
+              <div class="cont_box_img cont_box_img6">
+                <img src="https://janet.co.kr/data/licenseitem/145/.6rO17Ya17ZWc6rWt7Ja066mU7J24.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+            <div class="cont_box cont_box7">
+              <div class="cont_box_img cont_box_img7">
+                <img src="https://janet.co.kr/data/licenseitem/1622601017/7IKs7ZqM67O17KeA7IKs66mU7J24.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+            <div class="cont_box cont_box8">
+              <div class="cont_box_img cont_box_img8">
+                <img src="https://janet.co.kr/data/licenseitem/176/hotKeyword_24.jpg" alt="컨텐츠이미지">
+                <div class="dDay"></div>
+                <div class="cont_title"></div>
+              </div>
+              <div class="agency">시행기관 : <span></span></div>
+              <div class="date">시험일 : <span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/top20.js"></script>
+  <script>
+
+    bannerSlide();
+    menuSlide();
+    listSlide();
+    mainSlide();
+    contentsBox();
+  </script>
+</body>
+
 </html>
-
